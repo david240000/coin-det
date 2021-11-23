@@ -1,9 +1,9 @@
 import numpy as np
 import cv2
 
-def run_main():
+def sum(kep):
 
-        img = cv2.imread('forint.jpg')
+        img = cv2.imread(kep)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
         gray_blur = cv2.GaussianBlur(gray, (15, 15), 0)
@@ -47,6 +47,11 @@ def run_main():
         cv2.putText(img, text, (0,400), font, 0.5, (0, 0, 255), 2, cv2.LINE_AA)
         cv2.imshow('Detected coins',img)
         cv2.waitKey()
+
+def run_main():
+    sum('forint.jpg')
+    sum('kep.jpg')
+    sum('kep1.jpg')
 
 
 if __name__ == "__main__":
